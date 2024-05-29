@@ -1,4 +1,4 @@
-package com.leandrodev.kidsafeguardapp
+package com.leandrodev.kidsafeguardapp.presentation.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
