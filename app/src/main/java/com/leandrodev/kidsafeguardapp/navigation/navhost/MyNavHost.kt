@@ -5,14 +5,17 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.leandrodev.kidsafeguardapp.ui.screens.home.HomeScreen
-import com.leandrodev.kidsafeguardapp.ui.screens.main.MainScreen
 import kotlinx.serialization.Serializable
 
 @Composable
 fun MyNavHost(navHostController: NavHostController) {
-    NavHost(navController = navHostController, startDestination = HomeScreenRoute){
+
+    NavHost(
+        navController = navHostController,
+        startDestination = HomeScreenRoute
+    ){
         composable<HomeScreenRoute>{
-            HomeScreen(navHostController)
+            HomeScreen()
         }
     }
 }

@@ -2,14 +2,15 @@ package com.leandrodev.kidsafeguardapp.util
 
 import kotlinx.serialization.Serializable
 
-@Serializable
-object MainScreen
 
 @Serializable
-object Instructions
+object MainScreenRoute
 
 @Serializable
-object EmergencyContacts
+object InstructionsScreenRoute
 
 @Serializable
-object News
+object EmergencyScreenRoute
+
+@Serializable
+object NewsScreenRoute
