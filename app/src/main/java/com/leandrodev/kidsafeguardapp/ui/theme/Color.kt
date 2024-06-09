@@ -2,6 +2,10 @@ package com.leandrodev.kidsafeguardapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+
+val primaryColor = Color(0xFF9887FF)
+val alphaPrimaryColor = Color(0xFFA99AFF).copy(alpha = 0.2f)
+
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
 val Pink80 = Color(0xFFEFB8C8)
