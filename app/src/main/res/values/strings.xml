@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">kidsafeguardapp</string>
+
+    <!--- Bottom App Bar -->
+    
+    <string name="bottom_bar_item_home">Início</string>
+    <string name="bottom_bar_item_instructions">Instruções</string>
+    <string name="bottom_bar_item_emergency">Emergência</string>
+    <string name="bottom_bar_item_news">Notícias</string>
+
 </resources>
