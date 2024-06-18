@@ -33,4 +33,8 @@ class MainActivity : ComponentActivity() {
             actionBar?.hide()
         }
     }
+
+    fun finishActivity() {
+        finish()
+    }
 }

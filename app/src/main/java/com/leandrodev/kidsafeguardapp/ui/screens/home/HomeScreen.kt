@@ -19,12 +19,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.leandrodev.kidsafeguardapp.navigation.item.BottomNavItem
 import com.leandrodev.kidsafeguardapp.navigation.navhost.BottomAppBarNavHost
 import com.leandrodev.kidsafeguardapp.ui.components.AddBottomItem
+import com.leandrodev.kidsafeguardapp.ui.components.AppBarUI
 import com.leandrodev.kidsafeguardapp.ui.theme.alphaPrimaryColor
 import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
 import com.leandrodev.kidsafeguardapp.util.EmergencyScreenRoute
@@ -58,7 +61,7 @@ fun HomeScreen(navHostController: NavHostController = rememberNavController()) {
                             selected = selectedItem == index,
                             onClick = {
                                 selectedItem = index
-                                when(index){
+                                when (index) {
                                     0 -> navHostController.navigate(MainScreenRoute)
                                     1 -> navHostController.navigate(InstructionsScreenRoute)
                                     2 -> navHostController.navigate(EmergencyScreenRoute)
@@ -66,18 +69,25 @@ fun HomeScreen(navHostController: NavHostController = rememberNavController()) {
                                 }
                             },
                             label = {
-                                Text(text = stringResource(id = item.title), color = primaryColor)
+                                Text(
+                                    text = stringResource(id = item.title),
+                                    color = primaryColor,
+                                    fontSize = 12.sp,
+                                    fontWeight = if (selectedItem == index) FontWeight.Bold else FontWeight.Normal
+                                )
                             }
                         )
 
-                        if (index == BottomNavItem.items.size -1) {
+                        if (index == BottomNavItem.items.size - 1) {
                             Spacer(modifier = Modifier.width(8.dp))
                         }
                     }
                 }
             )
         },
-
+        topBar = {
+            AppBarUI()
+        },
         content = { paddingValues ->
             Box(
                 modifier = Modifier
