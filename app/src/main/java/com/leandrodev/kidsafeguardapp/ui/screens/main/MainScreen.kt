@@ -15,7 +15,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leandrodev.kidsafeguardapp.R
 import com.leandrodev.kidsafeguardapp.data.model.CardExploreApp
+import com.leandrodev.kidsafeguardapp.data.model.CardPrincipaisOcorrencias
 import com.leandrodev.kidsafeguardapp.ui.components.LazyRowExploreApp
+import com.leandrodev.kidsafeguardapp.ui.components.LazyRowPrincipaisOcorrencias
 import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
 
 @Composable
@@ -36,6 +38,33 @@ fun MainScreen() {
 
         CardExploreApp(
             icon = R.drawable.ic_game_fill
+        )
+    )
+
+    val itemsPrincipaisOcorrencias = listOf(
+        CardPrincipaisOcorrencias(
+            title = stringResource(id = R.string.engasgo),
+            image = R.drawable.engasgocrianca
+        ),
+
+        CardPrincipaisOcorrencias(
+            title = stringResource(id = R.string.engasgo),
+            image = R.drawable.engasgocrianca
+        ),
+
+        CardPrincipaisOcorrencias(
+            title = stringResource(id = R.string.engasgo),
+            image = R.drawable.engasgocrianca
+        ),
+
+        CardPrincipaisOcorrencias(
+            title = stringResource(id = R.string.engasgo),
+            image = R.drawable.engasgocrianca
+        ),
+
+        CardPrincipaisOcorrencias(
+            title = stringResource(id = R.string.engasgo),
+            image = R.drawable.engasgocrianca
         )
     )
 
@@ -85,6 +114,8 @@ fun MainScreen() {
                 fontWeight = FontWeight.Bold,
                 color = primaryColor
             )
+
+            LazyRowPrincipaisOcorrencias(items = itemsPrincipaisOcorrencias)
 
         }
 
