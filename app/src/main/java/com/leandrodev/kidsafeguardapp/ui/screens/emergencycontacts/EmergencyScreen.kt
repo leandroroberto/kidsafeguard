@@ -1,4 +1,4 @@
-package com.leandrodev.kidsafeguardapp.ui.emergencycontacts
+package com.leandrodev.kidsafeguardapp.ui.screens.emergencycontacts
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
