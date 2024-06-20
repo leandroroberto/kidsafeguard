@@ -23,7 +23,7 @@ import com.leandrodev.kidsafeguardapp.data.model.CardExploreApp
 import com.leandrodev.kidsafeguardapp.data.model.CardPrincipaisOcorrencias
 import com.leandrodev.kidsafeguardapp.ui.components.LazyRowExploreApp
 import com.leandrodev.kidsafeguardapp.ui.components.LazyRowPrincipaisOcorrencias
-import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
+import com.leandrodev.kidsafeguardapp.ui.theme.blackColor
 
 @Composable
 fun MainScreen() {
@@ -100,7 +100,7 @@ fun MainScreen() {
                     .padding(10.dp),
                 fontWeight = FontWeight.Bold,
                 text = stringResource(id = R.string.seja_bem_vindo),
-                color = primaryColor,
+                color = blackColor,
                 fontSize = 22.sp
             )
 
@@ -117,7 +117,7 @@ fun MainScreen() {
                     text = stringResource(id = R.string.explore_o_app),
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
-                    color = primaryColor
+                    color = blackColor,
                 )
 
                 LazyRowExploreApp(items = itemsExploreApp)
@@ -135,7 +135,7 @@ fun MainScreen() {
                     text = stringResource(id = R.string.principais_ocorrencias),
                     fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
-                    color = primaryColor
+                    color = blackColor,
                 )
 
                 LazyRowPrincipaisOcorrencias(items = itemsPrincipaisOcorrencias)

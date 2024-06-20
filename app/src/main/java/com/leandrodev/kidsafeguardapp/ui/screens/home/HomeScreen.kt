@@ -29,6 +29,7 @@ import com.leandrodev.kidsafeguardapp.navigation.item.BottomNavItem
 import com.leandrodev.kidsafeguardapp.navigation.navhost.BottomAppBarNavHost
 import com.leandrodev.kidsafeguardapp.ui.components.AddBottomItem
 import com.leandrodev.kidsafeguardapp.ui.components.AppBarUI
+import com.leandrodev.kidsafeguardapp.ui.theme.alphaColorWhite
 import com.leandrodev.kidsafeguardapp.ui.theme.alphaPrimaryColor
 import com.leandrodev.kidsafeguardapp.ui.theme.gradientColor
 import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
@@ -70,7 +71,7 @@ fun HomeScreen(navHostController: NavHostController = rememberNavController()) {
                     .padding(16.dp)
                     .clip(CircleShape)
                     .border(1.dp, alphaPrimaryColor, CircleShape),
-                containerColor = Color.White,
+                containerColor = alphaColorWhite,
                 content = {
                     BottomNavItem.items.forEachIndexed { index, item ->
 

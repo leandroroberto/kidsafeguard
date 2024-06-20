@@ -14,6 +14,8 @@ val alphaPrimaryColorDark90 = Color(0xE6887FFF)
 val alphaPrimaryColorDark80 = Color(0xCC887FFF)
 val alphaPrimaryColorDark60 = Color(0x99887FFF)
 
+val blackColor = Color(0xFF333333)
+
 
 val secondaryColor = Color(0xAAB5FFFF)
 val secondaryColor02 = Color(0xE1D5FFFF)
@@ -26,7 +28,7 @@ val secondaryColor08 = Color(0xFFD0B6F)
 val secondaryColor09 = Color(0xFFEAB6F)
 
 val colorWhite = Color(0xFFFFFFFF)
-val alphaColorWhite = Color(0xFFFFFFFF).copy(alpha = 0.2f)
+val alphaColorWhite = Color(0xFFFFFFFF).copy(alpha = 0.5f)
 
 val gradientColor = Color(0xFFFFC0CB) to Color(0xFFD8E6FF)
 

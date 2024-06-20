@@ -1,6 +1,7 @@
 package com.leandrodev.kidsafeguardapp.ui.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,25 +22,24 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leandrodev.kidsafeguardapp.data.model.CardPrincipaisOcorrencias
-import com.leandrodev.kidsafeguardapp.ui.theme.colorWhite
-import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
+import com.leandrodev.kidsafeguardapp.ui.theme.alphaColorWhite
+import com.leandrodev.kidsafeguardapp.ui.theme.blackColor
 
 @Composable
 fun CardPrincipaisOcorrenciasUI(item: CardPrincipaisOcorrencias) {
+
     Card(
         modifier = Modifier
             .width(120.dp)
             .height(200.dp)
             .border(0.7.dp, Color.LightGray, shape = CardDefaults.shape),
-        colors = CardDefaults.cardColors(
-            containerColor = colorWhite
-        ),
         elevation = CardDefaults.elevatedCardElevation(
             defaultElevation = 4.dp
         )
     ) {
         Column(
             modifier = Modifier
+                .background(alphaColorWhite)
                 .fillMaxSize(),
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -48,7 +48,7 @@ fun CardPrincipaisOcorrenciasUI(item: CardPrincipaisOcorrencias) {
                 modifier = Modifier,
                 text = item.title,
                 textAlign = TextAlign.Center,
-                color = primaryColor,
+                color = blackColor,
                 fontWeight = FontWeight.SemiBold,
                 fontSize = 18.sp
             )
