@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.leandrodev.kidsafeguardapp.ui.screens.emergencycontacts.EmergencyScreen
+import com.leandrodev.kidsafeguardapp.ui.emergencycontacts.EmergencyScreen
 import com.leandrodev.kidsafeguardapp.ui.screens.instructions.InstructionsScreen
 import com.leandrodev.kidsafeguardapp.ui.screens.main.MainScreen
 import com.leandrodev.kidsafeguardapp.ui.screens.news.NewsScreen

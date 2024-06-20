@@ -17,6 +17,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -29,6 +30,7 @@ import com.leandrodev.kidsafeguardapp.navigation.navhost.BottomAppBarNavHost
 import com.leandrodev.kidsafeguardapp.ui.components.AddBottomItem
 import com.leandrodev.kidsafeguardapp.ui.components.AppBarUI
 import com.leandrodev.kidsafeguardapp.ui.theme.alphaPrimaryColor
+import com.leandrodev.kidsafeguardapp.ui.theme.gradientColor
 import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
 import com.leandrodev.kidsafeguardapp.util.EmergencyScreenRoute
 import com.leandrodev.kidsafeguardapp.util.InstructionsScreenRoute
@@ -41,7 +43,27 @@ fun HomeScreen(navHostController: NavHostController = rememberNavController()) {
 
     var selectedItem by remember { mutableIntStateOf(0) }
 
+    // Obtenha o gradiente do seu arquivo Color
+    val gradientColors = gradientColor
+
+    // Crie o pincel (Brush) de gradiente linear
+    val gradientBrush = Brush.linearGradient(
+        colors = gradientColors.toList(),
+        start = androidx.compose.ui.geometry.Offset(0f, 0f),
+        end = androidx.compose.ui.geometry.Offset(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY)
+    )
+
+    // Calcula a média ponderada das cores do gradiente
+    val averageColor = Color(
+        red = (gradientColors.first.red + gradientColors.second.red) / 2,
+        green = (gradientColors.first.green + gradientColors.second.green) / 2,
+        blue = (gradientColors.first.blue + gradientColors.second.blue) / 2,
+        alpha = (gradientColors.first.alpha + gradientColors.second.alpha) / 2
+    )
+
     Scaffold(
+        modifier = Modifier,
+        containerColor = averageColor,
         bottomBar = {
             NavigationBar(
                 modifier = Modifier

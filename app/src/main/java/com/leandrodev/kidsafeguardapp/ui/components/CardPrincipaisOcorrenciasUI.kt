@@ -1,35 +1,39 @@
 package com.leandrodev.kidsafeguardapp.ui.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.leandrodev.kidsafeguardapp.data.model.CardPrincipaisOcorrencias
+import com.leandrodev.kidsafeguardapp.ui.theme.colorWhite
+import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
 
 @Composable
 fun CardPrincipaisOcorrenciasUI(item: CardPrincipaisOcorrencias) {
     Card(
         modifier = Modifier
-            .padding(8.dp)
-            .width(100.dp)
-            .height(150.dp)
-            .clip(shape = RoundedCornerShape(16.dp)),
+            .width(120.dp)
+            .height(200.dp)
+            .border(0.7.dp, Color.LightGray, shape = CardDefaults.shape),
+        colors = CardDefaults.cardColors(
+            containerColor = colorWhite
+        ),
         elevation = CardDefaults.elevatedCardElevation(
             defaultElevation = 4.dp
         )
@@ -37,14 +41,22 @@ fun CardPrincipaisOcorrenciasUI(item: CardPrincipaisOcorrencias) {
         Column(
             modifier = Modifier
                 .fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = item.title, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+            Text(
+                modifier = Modifier,
+                text = item.title,
+                textAlign = TextAlign.Center,
+                color = primaryColor,
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 18.sp
+            )
             Image(
                 modifier = Modifier
-                    .size(80.dp),
-                painter = painterResource(id = item.image), contentDescription = "imagem do card")
+                    .size(100.dp),
+                painter = painterResource(id = item.image), contentDescription = "imagem do card"
+            )
         }
     }
 }

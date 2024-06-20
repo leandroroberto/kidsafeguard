@@ -7,10 +7,15 @@
     <string name="bottom_bar_item_instructions">Instruções</string>
     <string name="bottom_bar_item_emergency">Emergência</string>
     <string name="bottom_bar_item_news">Notícias</string>
-    <string name="seja_bem_vindo">Seja Bem vindo(a)\nao Kid Safe Guard</string>
+    <string name="seja_bem_vindo">Seja Bem vindo(a) ao Kid Safe Guard</string>
     <string name="explore_o_app">Explore o App</string>
-    <string name="primeiros_cuidados">Primeiros cuidados</string>
+    <string name="kid_safe_guard">Kid Safe Guard</string>
     <string name="principais_ocorrencias">Principais ocorrências</string>
-    <string name="engasgo">ENGASGO</string>
+    <string name="engasgo">Engasgos</string>
+    <string name="queda">Quedas</string>
+    <string name="queimadura">Queimaduras</string>
+    <string name="picadaInseto">Picadas\nde\nInsetos</string>
+    <string name="afogamento">Afogamentos</string>
+    <string name="desmaios">Desmaios</string>
 
 </resources>
