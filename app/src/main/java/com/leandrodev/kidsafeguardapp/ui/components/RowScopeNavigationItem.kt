@@ -9,9 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.compose.primaryContainerLight
+import com.example.compose.primaryLight
+import com.example.compose.secondaryContainerLight
 import com.leandrodev.kidsafeguardapp.navigation.item.BottomNavItem
-import com.leandrodev.kidsafeguardapp.ui.theme.alphaPrimaryColor
-import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
 
 @Composable
 fun RowScope.AddBottomItem(
@@ -34,9 +35,9 @@ fun RowScope.AddBottomItem(
         },
 
         colors = NavigationBarItemDefaults.colors(
-            selectedIconColor = primaryColor,
-            unselectedIconColor = primaryColor,
-            indicatorColor = alphaPrimaryColor
+            selectedIconColor = primaryLight,
+            unselectedIconColor = primaryContainerLight,
+            indicatorColor = secondaryContainerLight
         )
     )
 

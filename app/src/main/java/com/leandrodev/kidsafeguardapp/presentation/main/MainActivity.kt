@@ -6,8 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
+import com.example.compose.KidsafeguardappTheme
 import com.leandrodev.kidsafeguardapp.navigation.navhost.MyNavHost
-import com.leandrodev.kidsafeguardapp.ui.theme.KidsafeguardappTheme
 import com.leandrodev.kidsafeguardapp.viewmodel.splashscreen.SplashScreenViewModel
 
 class MainActivity : ComponentActivity() {

@@ -18,9 +18,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.compose.onPrimaryLight
+import com.example.compose.primaryLight
 import com.leandrodev.kidsafeguardapp.data.model.CardExploreApp
-import com.leandrodev.kidsafeguardapp.ui.theme.alphaColorWhite
-import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
 
 @Composable
 fun CardExploreAppUI(item: CardExploreApp) {
@@ -37,13 +37,13 @@ fun CardExploreAppUI(item: CardExploreApp) {
     ) {
         Column(
             modifier = Modifier
-                .background(color = alphaColorWhite)
+                .background(color = onPrimaryLight)
                 .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Icon(
-                tint = primaryColor,
+                tint = primaryLight,
                 painter = painterResource(id = item.icon),
                 contentDescription = "Icone do explorer App"
             )

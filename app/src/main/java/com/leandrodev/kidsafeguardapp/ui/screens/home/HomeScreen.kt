@@ -2,6 +2,7 @@ package com.leandrodev.kidsafeguardapp.ui.screens.home
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.border
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
@@ -25,14 +26,16 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.compose.gradientColor
+import com.example.compose.onPrimaryContainerLight
+import com.example.compose.onTertiaryContainerLight
+import com.example.compose.primaryContainerDark
+import com.example.compose.primaryContainerLight
+import com.example.compose.secondaryContainerLight
 import com.leandrodev.kidsafeguardapp.navigation.item.BottomNavItem
 import com.leandrodev.kidsafeguardapp.navigation.navhost.BottomAppBarNavHost
 import com.leandrodev.kidsafeguardapp.ui.components.AddBottomItem
 import com.leandrodev.kidsafeguardapp.ui.components.AppBarUI
-import com.leandrodev.kidsafeguardapp.ui.theme.alphaColorWhite
-import com.leandrodev.kidsafeguardapp.ui.theme.alphaPrimaryColor
-import com.leandrodev.kidsafeguardapp.ui.theme.gradientColor
-import com.leandrodev.kidsafeguardapp.ui.theme.primaryColor
 import com.leandrodev.kidsafeguardapp.util.EmergencyScreenRoute
 import com.leandrodev.kidsafeguardapp.util.InstructionsScreenRoute
 import com.leandrodev.kidsafeguardapp.util.MainScreenRoute
@@ -43,6 +46,8 @@ import com.leandrodev.kidsafeguardapp.util.NewsScreenRoute
 fun HomeScreen(navHostController: NavHostController = rememberNavController()) {
 
     var selectedItem by remember { mutableIntStateOf(0) }
+
+    val isDarkMode = isSystemInDarkTheme()
 
     // Obtenha o gradiente do seu arquivo Color
     val gradientColors = gradientColor
@@ -64,14 +69,14 @@ fun HomeScreen(navHostController: NavHostController = rememberNavController()) {
 
     Scaffold(
         modifier = Modifier,
-        containerColor = averageColor,
+        containerColor = if(isDarkMode) onTertiaryContainerLight else averageColor,
         bottomBar = {
             NavigationBar(
                 modifier = Modifier
                     .padding(16.dp)
                     .clip(CircleShape)
-                    .border(1.dp, alphaPrimaryColor, CircleShape),
-                containerColor = alphaColorWhite,
+                    .border(1.dp, primaryContainerLight, CircleShape),
+                containerColor = if(isDarkMode) primaryContainerDark else secondaryContainerLight,
                 content = {
                     BottomNavItem.items.forEachIndexed { index, item ->
 
@@ -94,9 +99,9 @@ fun HomeScreen(navHostController: NavHostController = rememberNavController()) {
                             label = {
                                 Text(
                                     text = stringResource(id = item.title),
-                                    color = primaryColor,
-                                    fontSize = 12.sp,
-                                    fontWeight = if (selectedItem == index) FontWeight.Bold else FontWeight.Normal
+                                    color = onPrimaryContainerLight,
+                                    fontSize = 11.sp,
+                                    fontWeight = if (selectedItem == index) FontWeight.ExtraBold else FontWeight.Normal
                                 )
                             }
                         )
